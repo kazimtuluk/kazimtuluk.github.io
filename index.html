@@ -4,90 +4,169 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kazim Tuluk • Data & Analytics</title>
-  <meta name="description" content="Data professional focused on analytics, teaching, and product insights." />
+  <meta name="description" content="Kazim Tuluk — data & analytics professional focused on insights, visualization, and predictive modeling." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#ffffff;--text:#111827;--muted:#6b7280;--brand:#0ea5a6;--card:#f8fafc;--line:#e5e7eb;}
-    body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);}
-    header{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--line);}
-    nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-weight:600;}
-    nav a:hover{color:var(--brand);}
-    .wrap{max-width:1000px;margin:0 auto;padding:20px;}
-    h1{font-size:36px;margin-bottom:10px;}
-    .subtitle{color:var(--muted);}
-    .section{margin-top:40px;}
-    .card{background:var(--card);padding:20px;border-radius:10px;margin-bottom:20px;}
-    footer{border-top:1px solid var(--line);padding:20px;color:var(--muted);font-size:14px;margin-top:40px;text-align:center;}
+    /* ====== Emerald + Charcoal palette ====== */
+    :root{
+      --bg:#ffffff;        /* page background */
+      --text:#0b1324;      /* primary text */
+      --muted:#6b7280;     /* secondary text */
+      --brand:#10b981;     /* emerald */
+      --brand-600:#059669; /* darker emerald */
+      --card:#f5f7fb;      /* card background */
+      --line:#e5e7eb;      /* subtle borders */
+      --shadow: 0 8px 20px rgba(0,0,0,.07);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1020; --text:#e5e7eb; --muted:#9aa0aa;
+        --brand:#34d399; --brand-600:#10b981;
+        --card:#11172a; --line:#1f2a44;
+        --shadow: 0 12px 24px rgba(0,0,0,.35);
+      }
+    }
+
+    /* ====== Base ====== */
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    .section{margin:40px 0}
+    h1{font-size:42px;line-height:1.15;margin:0 0 8px}
+    h2{font-size:28px;margin:0 0 14px;border-bottom:3px solid rgba(16,185,129,.2);display:inline-block;padding-bottom:8px}
+    h3{margin:0 0 8px}
+    .subtitle{color:var(--muted);font-size:18px}
+    .muted{color:var(--muted)}
+
+    /* ====== Header ====== */
+    header{
+      position:sticky;top:0;z-index:10;
+      background: linear-gradient(90deg, var(--bg), rgba(16,185,129,.10));
+      border-bottom:1px solid var(--line);
+      backdrop-filter:saturate(1.05);
+    }
+    .top{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+    .brand{font-weight:800;letter-spacing:.2px}
+    nav a{color:var(--muted);font-weight:600;margin-left:20px}
+    nav a:hover{color:var(--brand-600)}
+
+    /* ====== About block ====== */
+    .about-row{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+    .avatar{width:180px;height:180px;border-radius:50%;object-fit:cover;
+            box-shadow:var(--shadow);border:6px solid var(--bg)}
+
+    /* ====== Chips (contact links) ====== */
+    .chips{margin-top:8px}
+    .chip{
+      display:inline-block;margin-right:8px;padding:6px 12px;border-radius:999px;
+      background:var(--card);border:1px solid var(--line);color:var(--text);font-weight:600
+    }
+    .chip:hover{border-color:var(--brand);text-decoration:none}
+
+    /* ====== Projects grid ====== */
+    .projs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    @media(max-width:860px){.projs{grid-template-columns:1fr}}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease
+    }
+    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brand)}
+    .tag{display:inline-block;font-size:12px;background:var(--bg);border:1px solid var(--line);
+         padding:2px 8px;border-radius:999px;color:var(--muted);margin-right:6px}
+
+    /* ====== Footer ====== */
+    footer{border-top:1px solid var(--line);padding:18px;color:var(--muted);font-size:14px;margin-top:48px;text-align:center}
   </style>
 </head>
 <body>
+  <!-- ====== Header ====== -->
   <header>
-    <div><strong>Kazim Tuluk</strong></div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#projects">Projects</a>
-      <a href="#insights">Insights</a>
-    </nav>
+    <div class="top wrap">
+      <div class="brand">Kazim Tuluk</div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#projects">Projects</a>
+        <a href="#insights">Insights</a>
+      </nav>
+    </div>
   </header>
 
+  <div class="wrap">
+    <!-- ====== About ====== -->
     <section id="about" class="section">
-    <div style="display:flex; align-items:center; gap:30px; flex-wrap:wrap;">
-        <img src="assets/avatar.jpeg" alt="Kazim Tuluk" 
-            style="width:180px; height:180px; border-radius:50%; object-fit:cover; box-shadow:0px 4px 10px rgba(0,0,0,0.2);">
+      <div class="about-row">
+        <img class="avatar" src="assets/avatar.jpeg" alt="Kazim Tuluk portrait" />
         <div>
-        <h1 style="margin:0; font-size:2.2rem;">Kazim Tuluk</h1>
-        <p class="subtitle">Data & Analytics professional with 15+ years of teaching experience.</p>
-        <p style="max-width:600px; line-height:1.6;">
-            My current work includes advanced analysis, predictive modeling, A/B testing, and visualization.
-        </p>
+          <h1>Kazim Tuluk</h1>
+          <p class="subtitle">Data & Analytics professional with 15+ years of teaching experience.</p>
+          <p style="max-width:680px">My current work includes advanced analysis, predictive modeling, A/B testing, and visualization.</p>
+          <p class="chips">
+            <a class="chip" href="mailto:kazim.tuluk@gmail.com">Email</a>
+            <a class="chip" href="https://github.com/kazimtuluk" target="_blank" rel="noreferrer">GitHub</a>
+          </p>
         </div>
-    </div>
+      </div>
     </section>
 
-
+    <!-- ====== Resume ====== -->
     <section id="resume" class="section">
       <h2>Resume</h2>
-      <p><a href="assets/resume.pdf" target="_blank">Open PDF Resume</a></p>
+      <p><a href="assets/resume.pdf" class="chip" target="_blank" rel="noreferrer">Open PDF Resume</a></p>
+      <div class="muted">Tip: keep the file at <code>assets/resume.pdf</code> for a stable link.</div>
     </section>
 
+    <!-- ====== Projects ====== -->
     <section id="projects" class="section">
       <h2>Projects</h2>
-      <div class="card">
-        <h3>Case Study on Electric Consumption</h3>
-        <p>Analyzed electricity consumption patterns using R.</p>
-        <a href="https://github.com/kazimtuluk/Portfolio" target="_blank">Repo</a>
-      </div>
-      <div class="card">
-        <h3>Netflix Titles Database</h3>
-        <p>Designed schema and ETL pipeline with PostgreSQL + Python.</p>
-        <a href="https://github.com/kazimtuluk/netflix" target="_blank">Repo</a>
-      </div>
-      <div class="card">
-        <h3>Expenses Tracker with AI Integration</h3>
-        <p>Automated receipt processing with Python + SQLite.</p>
-        <span>Repo (coming soon)</span>
+      <div class="projs">
+        <article class="card">
+          <h3>Case Study on Electric Consumption</h3>
+          <p class="muted">R • Data Analysis • Visualization</p>
+          <p>Analyzed electricity consumption patterns to identify seasonal variation and opportunities for efficiency.</p>
+          <div><span class="tag">R</span><span class="tag">EDA</span><span class="tag">Viz</span></div>
+          <p style="margin-top:10px"><a href="https://github.com/kazimtuluk/Portfolio" target="_blank" rel="noreferrer">Repo</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Netflix Titles Database</h3>
+          <p class="muted">PostgreSQL • Python ETL • Controller/Repository</p>
+          <p>Normalized titles, people, and categories; implemented robust CSV importer and enrichment pipeline.</p>
+          <div><span class="tag">Postgres</span><span class="tag">Python</span><span class="tag">ETL</span></div>
+          <p style="margin-top:10px"><a href="https://github.com/kazimtuluk/netflix" target="_blank" rel="noreferrer">Repo</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Expenses Tracker with AI Integration</h3>
+          <p class="muted">Python • SQLite • Automation</p>
+          <p>Receipt-processing pipeline with categorization and spending summaries for personal finance tracking.</p>
+          <div><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Automation</span></div>
+          <p style="margin-top:10px"><em>Repo (coming soon)</em></p>
+        </article>
       </div>
     </section>
 
+    <!-- ====== Insights ====== -->
     <section id="insights" class="section">
       <h2>Insights</h2>
       <ul>
         <li><a href="insight.html?file=insights/hello-world.md">Hello World: Why I keep a learning log</a></li>
-        <li><a href="insight.html?file=insights/controller-repo-pattern.md">Controller/Repository pattern</a></li>
+        <li><a href="insight.html?file=insights/controller-repo-pattern.md">Controller/Repository pattern for data projects</a></li>
         <li><a href="insight.html?file=insights/ridge-vs-lasso.md">Ridge vs Lasso explained</a></li>
       </ul>
+      <div class="muted">You can publish Markdown posts later—links above will work once <code>insight.html</code> and the files exist.</div>
     </section>
 
     <footer>
-      © <span id="year"></span> Kazim Tuluk
+      © <span id="y"></span> Kazim Tuluk
     </footer>
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
