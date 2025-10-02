@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kazim Tuluk • Data & Analytics</title>
+  <meta name="description" content="Data professional focused on analytics, teaching, and product insights." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#ffffff;--text:#111827;--muted:#6b7280;--brand:#0ea5a6;--card:#f8fafc;--line:#e5e7eb;}
+    body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);}
+    header{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--line);}
+    nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-weight:600;}
+    nav a:hover{color:var(--brand);}
+    .wrap{max-width:1000px;margin:0 auto;padding:20px;}
+    h1{font-size:36px;margin-bottom:10px;}
+    .subtitle{color:var(--muted);}
+    .section{margin-top:40px;}
+    .card{background:var(--card);padding:20px;border-radius:10px;margin-bottom:20px;}
+    footer{border-top:1px solid var(--line);padding:20px;color:var(--muted);font-size:14px;margin-top:40px;text-align:center;}
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>Kazim Tuluk</strong></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#projects">Projects</a>
+      <a href="#insights">Insights</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section id="about" class="section">
+      <h1>Kazim Tuluk</h1>
+      <p class="subtitle">Data & Analytics professional with 15+ years of teaching experience.</p>
+      <p>My current work includes advanced analysis, predictive modeling, A/B testing, and visualization.</p>
+    </section>
+
+    <section id="resume" class="section">
+      <h2>Resume</h2>
+      <p><a href="assets/resume.pdf" target="_blank">Open PDF Resume</a></p>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>Case Study on Electric Consumption</h3>
+        <p>Analyzed electricity consumption patterns using R.</p>
+        <a href="https://github.com/kazimtuluk/Portfolio" target="_blank">Repo</a>
+      </div>
+      <div class="card">
+        <h3>Netflix Titles Database</h3>
+        <p>Designed schema and ETL pipeline with PostgreSQL + Python.</p>
+        <a href="https://github.com/kazimtuluk/netflix" target="_blank">Repo</a>
+      </div>
+      <div class="card">
+        <h3>Expenses Tracker with AI Integration</h3>
+        <p>Automated receipt processing with Python + SQLite.</p>
+        <span>Repo (coming soon)</span>
+      </div>
+    </section>
+
+    <section id="insights" class="section">
+      <h2>Insights</h2>
+      <ul>
+        <li><a href="insight.html?file=insights/hello-world.md">Hello World: Why I keep a learning log</a></li>
+        <li><a href="insight.html?file=insights/controller-repo-pattern.md">Controller/Repository pattern</a></li>
+        <li><a href="insight.html?file=insights/ridge-vs-lasso.md">Ridge vs Lasso explained</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Kazim Tuluk
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
