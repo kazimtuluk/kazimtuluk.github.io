@@ -54,7 +54,15 @@
     nav a:hover{color:var(--brand-600)}
 
     /* ====== About block ====== */
-    .about-row{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+    /* Keep text beside the photo on desktop */
+  .about-row{display:flex; align-items:center; gap:30px; flex-wrap:nowrap}
+  /* Let the text actually shrink instead of forcing a new line */
+  .about-row .info{flex:1 1 auto; min-width:0}
+  /* Mobile: stack vertically */
+  @media(max-width:860px){
+    .about-row{flex-direction:column; align-items:flex-start}
+  }
+
     .avatar{width:180px;height:180px;border-radius:50%;object-fit:cover;
             box-shadow:var(--shadow);border:6px solid var(--bg)}
 
@@ -100,6 +108,7 @@
     <section id="about" class="section">
         <div class="about-row">
             <img class="avatar" src="assets/avatar.jpeg" alt="Kazim Tuluk portrait" />
+            <div class="info"></div>
             <div>
             <h1>Kazim Tuluk</h1>
 
