@@ -3,94 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kazim Tuluk • Business and Data Analyst</title>
+  <title>Kazim Tuluk • Data & Analytics</title>
   <meta name="description" content="Kazim Tuluk — data & analytics professional focused on insights, visualization, and predictive modeling." />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Manrope:wght@500;600;800&display=swap" rel="stylesheet">
+
   <style>
-    /* ====== Emerald + Charcoal palette ====== */
+    /* ===== Emerald + Charcoal palette ===== */
     :root{
-      --bg:#ffffff;        /* page background */
+      --bg:#ffffff;        /* page bg */
       --text:#0b1324;      /* primary text */
       --muted:#6b7280;     /* secondary text */
       --brand:#10b981;     /* emerald */
       --brand-600:#059669; /* darker emerald */
-      --card:#f5f7fb;      /* card background */
-      --line:#e5e7eb;      /* subtle borders */
-      --shadow: 0 8px 20px rgba(0,0,0,.07);
+      --card:#f5f7fb;      /* card bg */
+      --line:#e5e7eb;      /* borders */
+      --shadow:0 8px 20px rgba(0,0,0,.07);
     }
     @media (prefers-color-scheme: dark){
       :root{
         --bg:#0b1020; --text:#e5e7eb; --muted:#9aa0aa;
         --brand:#34d399; --brand-600:#10b981;
-        --card:#11172a; --line:#1f2a44;
-        --shadow: 0 12px 24px rgba(0,0,0,.35);
+        --card:#11172a; --line:#1f2a44; --shadow:0 12px 24px rgba(0,0,0,.35);
       }
     }
 
-    /* ====== Base ====== */
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    /* ===== Base ===== */
+    html{scroll-behavior:smooth;}
+    html,body{margin:0;background:var(--bg);color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    h1,h2,h3,.brand,nav a{font-family:Manrope, Inter, system-ui, sans-serif}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:1100px;margin:0 auto;padding:24px}
-    .section{margin:40px 0}
+    .section{margin:40px 0; scroll-margin-top:90px;}
     h1{font-size:42px;line-height:1.15;margin:0 0 8px}
     h2{font-size:28px;margin:0 0 14px;border-bottom:3px solid rgba(16,185,129,.2);display:inline-block;padding-bottom:8px}
     h3{margin:0 0 8px}
     .subtitle{color:var(--muted);font-size:18px}
     .muted{color:var(--muted)}
 
-    /* ====== Header ====== */
+    /* ===== Header ===== */
     header{
       position:sticky;top:0;z-index:10;
-      background: linear-gradient(90deg, var(--bg), rgba(16,185,129,.10));
-      border-bottom:1px solid var(--line);
-      backdrop-filter:saturate(1.05);
+      background:linear-gradient(90deg, var(--bg), rgba(16,185,129,.10));
+      border-bottom:1px solid var(--line); backdrop-filter:saturate(1.05);
     }
     .top{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
     .brand{font-weight:800;letter-spacing:.2px}
-    nav a{color:var(--muted);font-weight:600;margin-left:20px}
+    nav a{color:var(--muted);font-weight:600;margin-left:22px}
     nav a:hover{color:var(--brand-600)}
 
-    /* ====== About block ====== */
-    /* Keep text beside the photo on desktop */
-  .about-row{display:flex; align-items:center; gap:30px; flex-wrap:nowrap}
-  /* Let the text actually shrink instead of forcing a new line */
-  .about-row .info{flex:1 1 auto; min-width:0}
-  /* Mobile: stack vertically */
-  @media(max-width:860px){
-    .about-row{flex-direction:column; align-items:flex-start}
-  }
+    /* ===== About layout ===== */
+    .about-row{display:flex;align-items:center;gap:30px;flex-wrap:nowrap}
+    .about-row .info{flex:1 1 auto; min-width:0}
+    @media(max-width:860px){ .about-row{flex-direction:column; align-items:flex-start} }
+    .avatar{width:180px;height:180px;border-radius:50%;object-fit:cover;border:6px solid var(--bg);box-shadow:var(--shadow)}
 
-    .avatar{width:180px;height:180px;border-radius:50%;object-fit:cover;
-            box-shadow:var(--shadow);border:6px solid var(--bg)}
-
-    /* ====== Chips (contact links) ====== */
+    /* ===== Chips ===== */
     .chips{margin-top:8px}
-    .chip{
-      display:inline-block;margin-right:8px;padding:6px 12px;border-radius:999px;
-      background:var(--card);border:1px solid var(--line);color:var(--text);font-weight:600
-    }
+    .chip{display:inline-block;margin-right:8px;padding:6px 12px;border-radius:999px;
+      background:var(--card);border:1px solid var(--line);color:var(--text);font-weight:600}
     .chip:hover{border-color:var(--brand);text-decoration:none}
 
-    /* ====== Projects grid ====== */
+    /* ===== Projects grid ===== */
     .projs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
     @media(max-width:860px){.projs{grid-template-columns:1fr}}
-    .card{
-      background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;
-      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease
-    }
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
     .card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brand)}
     .tag{display:inline-block;font-size:12px;background:var(--bg);border:1px solid var(--line);
-         padding:2px 8px;border-radius:999px;color:var(--muted);margin-right:6px}
+      padding:2px 8px;border-radius:999px;color:var(--muted);margin-right:6px}
 
-    /* ====== Footer ====== */
+    /* ===== Footer ===== */
     footer{border-top:1px solid var(--line);padding:18px;color:var(--muted);font-size:14px;margin-top:48px;text-align:center}
   </style>
 </head>
 <body>
-  <!-- ====== Header ====== -->
+  <!-- ===== Header ===== -->
   <header>
     <div class="top wrap">
       <div class="brand">Kazim Tuluk</div>
@@ -98,50 +91,61 @@
         <a href="#about">About</a>
         <a href="#resume">Resume</a>
         <a href="#projects">Projects</a>
-        <a href="#insights">Insights</a>
+        <a href="#learning">Learning Journey</a>
       </nav>
     </div>
   </header>
 
   <div class="wrap">
-    <!-- ====== About ====== -->
+    <!-- ===== About ===== -->
     <section id="about" class="section">
-        <div class="about-row">
-            <img class="avatar" src="assets/avatar.jpeg" alt="Kazim Tuluk portrait" />
-            <div class="info"></div>
-            <div>
-            <h1>Kazim Tuluk</h1>
-
-            <!-- English tagline -->
-            <p class="subtitle">
-                Leveraging a teaching background to turn data into actionable business insights—curious, growth-minded, and a proud dad.
-            </p>
-
-            <!-- Professional summary -->
-            <p style="max-width:680px">
-                Analytical and detail-oriented professional with over 14 years of experience in mathematics education and
-                program management, now pursuing a career in Business Analytics. Skilled in SQL, R, Python, Tableau, and Power BI
-                with hands-on experience in data visualization, data cleaning, and statistical modeling. Strong communication and
-                leadership skills with a proven record of project coordination and intercultural collaboration.
-            </p>
-
-            <p class="chips">
-                <a class="chip" href="mailto:kazim.tuluk@gmail.com">Email</a>
-                <a class="chip" href="https://github.com/kazimtuluk" target="_blank" rel="noreferrer">GitHub</a>
-            </p>
-            </div>
+      <div class="about-row">
+        <img class="avatar" src="assets/avatar.jpeg" alt="Kazim Tuluk portrait" />
+        <div class="info">
+          <h1>Kazim Tuluk</h1>
+          <p class="subtitle">
+            Leveraging a teaching background to turn data into actionable business insights—curious, growth-minded, and a proud dad.
+          </p>
+          <p style="max-width:680px">
+            Analytical and detail-oriented professional with over 14 years of experience in mathematics education and program
+            management, now pursuing a career in Business Analytics. Skilled in SQL, R, Python, Tableau, and Power BI with
+            hands-on experience in data visualization, data cleaning, and statistical modeling. Strong communication and
+            leadership skills with a proven record of project coordination and intercultural collaboration. Fluent in English and Turkish.
+          </p>
+          <p class="chips">
+            <a class="chip" href="mailto:kazim.tuluk@gmail.com">Email</a>
+            <a class="chip" href="https://github.com/kazimtuluk" target="_blank" rel="noreferrer">GitHub</a>
+          </p>
         </div>
+      </div>
     </section>
 
-    <!-- ====== Projects ====== -->
+    <!-- ===== Resume (works with top nav) ===== -->
+    <section id="resume" class="section">
+      <h2>Resume</h2>
+      <p><a href="assets/resume.pdf" class="chip" target="_blank" rel="noreferrer">Open PDF Resume</a></p>
+      <div class="muted">Ensure the file exists at <code>assets/resume.pdf</code>.</div>
+    </section>
+
+    <!-- ===== Projects ===== -->
     <section id="projects" class="section">
       <h2>Projects</h2>
       <div class="projs">
+
+        <!-- Expense project first -->
+        <article class="card">
+          <h3>Expense Analysis with AI</h3>
+          <p class="muted">Python • CV/NLP (Gemini) • SQLite • Power BI</p>
+          <p>End-to-end pipeline that turns receipt images into structured data and insights: image parsing and NLP, a clean
+             SQLite data model, and interactive Power BI dashboards for spending trends and categories.</p>
+          <div><span class="tag">Automation</span><span class="tag">ETL</span><span class="tag">CV/NLP</span><span class="tag">Power BI</span></div>
+          <p style="margin-top:10px"><a href="https://github.com/kazimtuluk/expense-analysis-with-ai" target="_blank" rel="noreferrer">Repo</a></p>
+        </article>
+
         <article class="card">
           <h3>Case Study on Electric Consumption</h3>
           <p class="muted">R • Data Analysis • Visualization</p>
-          <p>This case study analyzes electricity consumption patterns to identify trends, seasonal variations, and potential areas for efficiency improvement. The analysis is performed using R, and includes both statistical methods and data visualization.
-            </p>
+          <p>Analyzed electricity consumption patterns to identify seasonal variation and opportunities for efficiency.</p>
           <div><span class="tag">R</span><span class="tag">EDA</span><span class="tag">Viz</span></div>
           <p style="margin-top:10px"><a href="https://github.com/kazimtuluk/Portfolio" target="_blank" rel="noreferrer">Repo</a></p>
         </article>
@@ -149,30 +153,23 @@
         <article class="card">
           <h3>Netflix Titles Database</h3>
           <p class="muted">PostgreSQL • Python ETL • Controller/Repository</p>
-          <p>Normalized titles, people, and categories; implemented robust CSV importer and enrichment pipeline.</p>
+          <p>Normalized titles, people, and categories; implemented a robust CSV importer and enrichment pipeline.</p>
           <div><span class="tag">Postgres</span><span class="tag">Python</span><span class="tag">ETL</span></div>
           <p style="margin-top:10px"><a href="https://github.com/kazimtuluk/netflix" target="_blank" rel="noreferrer">Repo</a></p>
         </article>
 
-        <article class="card">
-          <h3>Expenses Tracker with AI Integration</h3>
-          <p class="muted">Python • SQLite • Automation</p>
-          <p>Receipt-processing pipeline with categorization and spending summaries for personal finance tracking.</p>
-          <div><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Automation</span></div>
-          <p style="margin-top:10px"><em>Repo (coming soon)</em></p>
-        </article>
       </div>
     </section>
 
-    <!-- ====== Insights ====== -->
-    <section id="insights" class="section">
-      <h2>Insights</h2>
+    <!-- ===== Learning Journey (formerly Insights) ===== -->
+    <section id="learning" class="section">
+      <h2>Learning Journey</h2>
       <ul>
         <li><a href="insight.html?file=insights/hello-world.md">Hello World: Why I keep a learning log</a></li>
         <li><a href="insight.html?file=insights/controller-repo-pattern.md">Controller/Repository pattern for data projects</a></li>
         <li><a href="insight.html?file=insights/ridge-vs-lasso.md">Ridge vs Lasso explained</a></li>
       </ul>
-      <div class="muted">You can publish Markdown posts later—links above will work once <code>insight.html</code> and the files exist.</div>
+      <div class="muted">You can add posts later—links will work once <code>insight.html</code> and those Markdown files exist.</div>
     </section>
 
     <footer>
