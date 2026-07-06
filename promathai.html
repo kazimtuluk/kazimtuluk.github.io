@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProMathAI · Case Study · Kazim Tuluk</title>
+  <meta name="description" content="Case study: how a classroom problem became promathai.com, an AI-powered math practice platform in production." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="top">
+    <a class="brand" href="index.html">KAZIM TULUK</a>
+    <nav class="primary" aria-label="Primary">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="cs-hero">
+  <div class="wrap">
+    <a class="back" href="index.html#work">← All work</a>
+    <span class="eyebrow" style="margin-top:18px"><span class="tick">■</span> Case study · Flagship product</span>
+    <h1>ProMathAI: from a <span class="pen">classroom problem</span> to a product in production</h1>
+    <dl class="cs-meta">
+      <div><dt>Role</dt><dd>Founder &amp; Business Analyst</dd></div>
+      <div><dt>Timeline</dt><dd>2025 to present · live since May 2026</dd></div>
+      <div><dt>Core stack</dt><dd>PostgreSQL · Cloudflare R2 · AI API · transactional email · CI/CD hosting</dd></div>
+      <div><dt>Links</dt><dd><a href="https://promathai.com" target="_blank" rel="noreferrer">promathai.com ↗</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="wrap cs-body">
+
+  <section class="section">
+    <h2>The problem</h2>
+    <p>
+      Every year, hundreds of thousands of Grade 8 students in Türkiye prepare for the national high-school entrance exam.
+      Preparation runs on practice tests, and practice tests run on feedback. In fourteen years of teaching mathematics,
+      I watched the same failure mode on repeat: a student answers a question wrong on Tuesday evening and finds out
+      why on Thursday, if the teacher has time. By then, the misconception has had two days to settle in.
+    </p>
+    <div class="callout">
+      <p>The requirement behind the product, in one sentence: a student who gets a question wrong should understand why within a minute, not within a week.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>From observation to requirements</h2>
+    <p>
+      I approached this as an analysis problem before a software problem, mapping three stakeholder groups and what each needed:
+    </p>
+    <ul>
+      <li><strong>Students</strong> need instant, step-by-step explanations when they get a question wrong, more practice on their weak topics, and a reason to come back tomorrow.</li>
+      <li><strong>Teachers</strong> need to bring their own question material into the system and see where their group is struggling, without learning a new profession to do it.</li>
+      <li><strong>Parents</strong> need a simple signal: is my child practising, and is it working?</li>
+    </ul>
+    <p>
+      These translated into functional requirements: an item bank organized by topic, AI-generated explanations for
+      every question, adaptive question generation targeting weak topics, mastery tracking, and separate role-based
+      experiences for students and teachers.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>What I built</h2>
+    <p>
+      ProMathAI is a web platform where students take practice tests from a question bank of 1,252 items and counting.
+      A wrong answer triggers a step-by-step AI explanation on the spot. The system tracks mastery by topic,
+      generates new questions adapted to each student's weak areas, and adds gamification and homework flows to keep
+      practice going. Teachers join through code-based registration and contribute their own content through a
+      structured upload process.
+    </p>
+
+    <figure class="shot">
+      <img src="assets/promathai-student.png" alt="ProMathAI student dashboard showing topic mastery" onerror="this.parentElement.style.display='none'">
+      <figcaption>Student dashboard: practice tests and topic mastery tracking. Interface in Turkish, built for its real users.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="assets/promathai-explanation.png" alt="Step-by-step AI explanation of a math question" onerror="this.parentElement.style.display='none'">
+      <figcaption>The core loop: a wrong answer becomes a step-by-step explanation within seconds.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="assets/promathai-teacher.png" alt="Teacher panel for uploading and managing questions" onerror="this.parentElement.style.display='none'">
+      <figcaption>Teacher panel: structured data input for the question bank.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section">
+    <h2>System design and integrations</h2>
+    <p>
+      The platform runs on an integrated set of managed services: a PostgreSQL database for the item bank and user data,
+      Cloudflare R2 with a CDN for question images, an AI API for explanations and question generation, transactional
+      email for account flows, and hosting pipelines that deploy from GitHub. I configured and maintain each integration,
+      and documented the architecture, the deployment workflow, and the reasoning behind every major design decision in
+      a technical report, so that anyone returning to the system later, including me, can see not just what was decided
+      but why.
+    </p>
+    <p>
+      Access control was designed as part of the requirements, not bolted on: role-based student and teacher accounts,
+      code-based registration so teachers onboard in a controlled way, and a secure password-reset workflow.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Testing, launch, and running in production</h2>
+    <p>
+      Before each release I run multi-level test scenarios: API endpoint validation, cross-device and cross-browser
+      checks, and end-to-end passes through registration and password-reset flows. Production has already provided its
+      own lessons; when a scoring issue appeared after launch, root cause analysis traced it to a data-type mismatch,
+      and the fix shipped from a backlog I keep prioritized by risk and effort.
+    </p>
+    <div class="callout">
+      <p>Running a live product means the analysis never stops: every user complaint is a requirements-gathering session, and every incident is a root-cause exercise.</p>
+    </div>
+    <p>
+      The roadmap continues from that same backlog: each candidate improvement is rated for impact and effort before
+      it earns a place in the queue.
+    </p>
+  </section>
+
+  <section class="section">
+    <p class="links" style="font-family:'IBM Plex Mono',monospace">
+      <a href="index.html#work">← All work</a>
+      <a style="margin-left:18px" href="https://promathai.com" target="_blank" rel="noreferrer">Visit promathai.com ↗</a>
+    </p>
+  </section>
+
+</div>
+
+<footer class="site">
+  <p><a href="mailto:kazim.tuluk@gmail.com">kazim.tuluk@gmail.com</a> · <a href="https://www.linkedin.com/in/kazim-tuluk-b4215170" target="_blank" rel="noreferrer">LinkedIn</a> · Kingston, Ontario</p>
+  <p>© <span id="y"></span> Kazim Tuluk</p>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

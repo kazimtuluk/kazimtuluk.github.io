@@ -3,203 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kazim Tuluk • Data & Analytics</title>
-  <meta name="description" content="Kazim Tuluk — data & analytics professional focused on insights, visualization, and predictive modeling." />
-
-  <!-- Fonts -->
+  <title>Kazim Tuluk · Business Analyst</title>
+  <meta name="description" content="Kazim Tuluk is a business analyst in Kingston, Ontario. Formal analytics training, a product in production at promathai.com, and client work that ships." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Manrope:wght@500;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    /* ===== Emerald + Charcoal palette ===== */
-    :root{
-      --bg:#ffffff;        /* page bg */
-      --text:#0b1324;      /* primary text */
-      --muted:#6b7280;     /* secondary text */
-      --brand:#10b981;     /* emerald */
-      --brand-600:#059669; /* darker emerald */
-      --card:#f5f7fb;      /* card bg */
-      --line:#e5e7eb;      /* borders */
-      --shadow:0 8px 20px rgba(0,0,0,.07);
-    }
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg:#0b1020; --text:#e5e7eb; --muted:#9aa0aa;
-        --brand:#34d399; --brand-600:#10b981;
-        --card:#11172a; --line:#1f2a44; --shadow:0 12px 24px rgba(0,0,0,.35);
-      }
-    }
-
-    /* ===== Base ===== */
-    html{scroll-behavior:smooth;}
-    html,body{margin:0;background:var(--bg);color:var(--text);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    h1,h2,h3,.brand,nav a{font-family:Manrope, Inter, system-ui, sans-serif}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1100px;margin:0 auto;padding:24px}
-    .section{margin:40px 0; scroll-margin-top:90px;}
-    h1{font-size:42px;line-height:1.15;margin:0 0 8px}
-    h2{font-size:28px;margin:0 0 14px;border-bottom:3px solid rgba(16,185,129,.2);display:inline-block;padding-bottom:8px}
-    h3{margin:0 0 8px}
-    .subtitle{color:var(--muted);font-size:18px}
-    .muted{color:var(--muted)}
-
-    /* ===== Header ===== */
-    header{
-      position:sticky;top:0;z-index:10;
-      background:linear-gradient(90deg, var(--bg), rgba(16,185,129,.10));
-      border-bottom:1px solid var(--line); backdrop-filter:saturate(1.05);
-    }
-    .top{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
-    .brand{font-weight:800;letter-spacing:.2px}
-    nav a{color:var(--muted);font-weight:600;margin-left:22px}
-    nav a:hover{color:var(--brand-600)}
-
-    /* ===== About layout ===== */
-    .about-row{display:flex;align-items:center;gap:30px;flex-wrap:nowrap}
-    .about-row .info{flex:1 1 auto; min-width:0}
-    @media(max-width:860px){ .about-row{flex-direction:column; align-items:flex-start} }
-    .avatar{width:180px;height:180px;border-radius:50%;object-fit:cover;border:6px solid var(--bg);box-shadow:var(--shadow)}
-
-    /* ===== Chips ===== */
-    .chips{margin-top:8px}
-    .chip{display:inline-block;margin-right:8px;padding:6px 12px;border-radius:999px;
-      background:var(--card);border:1px solid var(--line);color:var(--text);font-weight:600}
-    .chip:hover{border-color:var(--brand);text-decoration:none}
-
-    /* ===== Projects grid ===== */
-    .projs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-    @media(max-width:860px){.projs{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;
-      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
-    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brand)}
-    .tag{display:inline-block;font-size:12px;background:var(--bg);border:1px solid var(--line);
-      padding:2px 8px;border-radius:999px;color:var(--muted);margin-right:6px}
-
-    /* ===== Footer ===== */
-    footer{border-top:1px solid var(--line);padding:18px;color:var(--muted);font-size:14px;margin-top:48px;text-align:center}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ===== Header ===== -->
-  <header>
-    <div class="top wrap">
-      <div class="brand">Kazim Tuluk</div>
-      <nav aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#projects">Projects</a>
-        <a href="#learning">Learning Journey</a>
-      </nav>
-    </div>
-  </header>
 
-  <div class="wrap">
-    <!-- ===== About ===== -->
-    <section id="about" class="section">
-      <div class="about-row">
-        <img class="avatar" src="assets/avatar.jpeg" alt="Kazim Tuluk portrait" />
-        <div class="info">
-          <h1>Kazim Tuluk</h1>
-          <p class="subtitle">
-            Leveraging a teaching background to turn data into actionable business insights—curious, growth-minded, and a proud dad.
-          </p>
-          <p style="max-width:680px">
-            Analytical and detail-oriented professional with over 14 years of experience in mathematics education and program
-            management, now pursuing a career in Business Analytics. Skilled in SQL, R, Python, Tableau, and Power BI with
-            hands-on experience in data visualization, data cleaning, and statistical modeling. Strong communication and
-            leadership skills with a proven record of project coordination and intercultural collaboration.
-          </p>
-          <p class="chips">
-            <a class="chip" href="mailto:kazim.tuluk@gmail.com">Email</a>
-            <a class="chip" href="https://github.com/kazimtuluk" target="_blank" rel="noreferrer">GitHub</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Resume ===== -->
-    <section id="resume" class="section">
-      <h2>Resume</h2>
-      <p>
-        <a href="assets/resume.pdf" class="chip" target="_blank" rel="noreferrer">Open PDF Resume</a>
-      </p>
-    </section>
-
-    <!-- ===== Projects ===== -->
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="projs">
-
-        <!-- NEW: AI Agent Solution (first card) -->
-        <article class="card">
-          <h3>AI Agent Solution for Stature Leadership Innovations</h3>
-          <p class="muted">Python • Streamlit • Azure OpenAI • Multi-Agent • Scoring & Visualization</p>
-          <p>
-            Multi-agent system that converts a survey data into clear leadership reports.
-            Orchestrates pillar agents, applies a scoring/analytics engine, writes/refines report drafts, and exports to Word/PDF.
-            Built with Streamlit UI, curated knowledge base, and Azure OpenAI for generation.
-          </p>
-          <div>
-            <span class="tag">RAG</span>
-            <span class="tag">Agents</span>
-            <span class="tag">Analytics</span>
-            <span class="tag">Report Export</span>
-          </div>
-          <p style="margin-top:10px">
-            <a href="https://github.com/kazimtuluk/Report_Generator_Agent" target="_blank" rel="noreferrer">Repo</a>
-          </p>
-        </article>
-
-        <!-- Expense project -->
-        <article class="card">
-          <h3>Expense Analysis with AI</h3>
-          <p class="muted">Python • CV/NLP (Gemini) • PostgreSQL • Power BI</p>
-          <p>End-to-end pipeline that turns receipt images into structured data and insights: image parsing and NLP, a clean
-             PostgreSQL data model, and interactive Power BI dashboards for spending trends and categories.</p>
-          <div><span class="tag">Automation</span><span class="tag">ETL</span><span class="tag">CV/NLP</span><span class="tag">Power BI</span></div>
-          <p style="margin-top:10px"><a href="https://github.com/kazimtuluk/expense-analysis-with-ai" target="_blank" rel="noreferrer">Repo</a></p>
-        </article>
-
-        <article class="card">
-          <h3>Case Study on Electric Consumption</h3>
-          <p class="muted">R • Data Analysis • Visualization</p>
-          <p>Analyzed electricity consumption patterns to identify seasonal variation and opportunities for efficiency.</p>
-          <div><span class="tag">R</span><span class="tag">EDA</span><span class="tag">Viz</span></div>
-          <p style="margin-top:10px"><a href="https://github.com/kazimtuluk/Portfolio" target="_blank" rel="noreferrer">Repo</a></p>
-        </article>
-
-        <article class="card">
-          <h3>Netflix Titles Database</h3>
-          <p class="muted">PostgreSQL • Python ETL • Controller/Repository</p>
-          <p>Normalized titles, people, and categories; implemented a robust CSV importer and enrichment pipeline.</p>
-          <div><span class="tag">Postgres</span><span class="tag">Python</span><span class="tag">ETL</span></div>
-          <p style="margin-top:10px"><a href="https://github.com/kazimtuluk/netflix" target="_blank" rel="noreferrer">Repo</a></p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ===== Learning Journey (formerly Insights) ===== -->
-    <section id="learning" class="section">
-      <h2>Learning Journey</h2>
-      <ul>
-        <li><a href="insight.html?file=insights/hello-world.md">Hello World: Why I keep a learning log</a></li>
-        <li><a href="insight.html?file=insights/controller-repo-pattern.md">Controller/Repository pattern for data projects</a></li>
-        <li><a href="insight.html?file=insights/ridge-vs-lasso.md">Ridge vs Lasso explained</a></li>
-      </ul>
-      <div class="muted">You can add posts later—links will work once <code>insight.html</code> and those Markdown files exist.</div>
-    </section>
-
-    <footer>
-      © <span id="y"></span> Kazim Tuluk
-    </footer>
+<header class="site">
+  <div class="top">
+    <a class="brand" href="#top">KAZIM TULUK</a>
+    <nav class="primary" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
+</header>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="info">
+      <span class="eyebrow"><span class="tick">■</span> Business Analyst · Data Analytics</span>
+      <h1>I turn problems into requirements,<br>and requirements into <span class="pen">products that ship</span>.</h1>
+      <p class="lede">
+        Business analyst with formal analytics training and a product in production.
+        Fourteen years in mathematics education taught me to find the real problem before solving it.
+        Curious, evidence-driven, and a proud dad.
+      </p>
+      <div class="chips">
+        <a class="chip primary" href="#work">See my work</a>
+        <a class="chip" href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+        <a class="chip" href="mailto:kazim.tuluk@gmail.com">Email</a>
+        <a class="chip" href="https://www.linkedin.com/in/kazim-tuluk-b4215170" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <img class="avatar" src="assets/avatar.jpeg" alt="Portrait of Kazim Tuluk" onerror="this.style.display='none'" />
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- ===== Featured work ===== -->
+  <section id="work" class="section">
+    <div class="section-head">
+      <span class="eyebrow"><span class="tick">■</span> Featured work</span>
+      <h2>Case studies</h2>
+    </div>
+
+    <!-- ProMathAI -->
+    <article class="case">
+      <p class="meta">Flagship product · Founder &amp; Business Analyst</p>
+      <h3>ProMathAI</h3>
+      <dl class="facts">
+        <div class="row"><dt>Problem</dt><dd>Grade 8 students preparing for a national exam get no timely feedback on practice tests. A wrong answer stays unexplained until a teacher is available.</dd></div>
+        <div class="row"><dt>Built</dt><dd>An AI-powered practice platform with step-by-step explanations, adaptive question generation, and topic mastery tracking. A 1,252-item question bank, role-based student and teacher access, and integrations across five third-party services.</dd></div>
+        <div class="row"><dt>Status</dt><dd>Live in production since May 2026.</dd></div>
+      </dl>
+      <p class="links">
+        <a href="promathai.html">Read the case study →</a>
+        <a href="https://promathai.com" target="_blank" rel="noreferrer">promathai.com ↗</a>
+      </p>
+    </article>
+
+    <!-- Stature -->
+    <article class="case">
+      <p class="meta">Placement · Data &amp; AI Analyst</p>
+      <h3>Leadership Reporting Agent · Stature Leadership</h3>
+      <dl class="facts">
+        <div class="row"><dt>Problem</dt><dd>Coaches spent hours turning leadership survey data into client-ready reports, time that came out of coaching sessions.</dd></div>
+        <div class="row"><dt>Built</dt><dd>A multi-agent reporting system: a scoring and statistics engine (repeated-measures ANOVA, regression), report drafting grounded in a curated knowledge base, and an interface where coaches review and refine every draft before export.</dd></div>
+        <div class="row"><dt>Outcome</dt><dd>End-to-end automation from survey intake to emailed reports, cutting manual workload and turnaround time while keeping coaches in control.</dd></div>
+      </dl>
+      <p class="links">
+        <a href="https://github.com/kazimtuluk/Report_Generator_Agent" target="_blank" rel="noreferrer">Repository ↗</a>
+      </p>
+    </article>
+
+    <!-- Neighbourhood Social -->
+    <article class="case">
+      <p class="meta">Client project · Requirements to delivery</p>
+      <h3>The Neighbourhood Social House</h3>
+      <dl class="facts">
+        <div class="row"><dt>Problem</dt><dd>A new café and bar in Belleville, Ontario needed an online presence before opening day. The owner had a clear vision but no technical spec.</dd></div>
+        <div class="row"><dt>Built</dt><dd>Translated conversations with the owner into concrete requirements, then designed and delivered the launch website.</dd></div>
+        <div class="row"><dt>Status</dt><dd>Live ahead of the café's July 2026 opening.</dd></div>
+      </dl>
+      <p class="links">
+        <a href="neighbourhood-social.html">Read the case study →</a>
+        <a href="https://www.neighbourhoodsocial.ca" target="_blank" rel="noreferrer">neighbourhoodsocial.ca ↗</a>
+      </p>
+    </article>
+  </section>
+
+  <!-- ===== More projects ===== -->
+  <section id="projects" class="section">
+    <div class="section-head">
+      <span class="eyebrow"><span class="tick">■</span> Analytics &amp; data engineering</span>
+      <h2>More projects</h2>
+    </div>
+    <div class="projs">
+
+      <article class="card">
+        <h3>Expense Analysis with AI</h3>
+        <p class="stack">Python · Gemini · PostgreSQL · Power BI</p>
+        <p>Spending data locked in receipt photos becomes structured insight: image parsing, a clean PostgreSQL data model, and interactive Power BI dashboards for trends and categories.</p>
+        <figure class="shot" style="margin:10px 0 4px"><img src="assets/expense-dashboard.png" alt="Power BI expense dashboard" onerror="this.parentElement.style.display='none'"></figure>
+        <p class="links"><a href="https://github.com/kazimtuluk/expense-analysis-with-ai" target="_blank" rel="noreferrer">Repository ↗</a></p>
+      </article>
+
+      <article class="card">
+        <h3>Netflix Titles Database</h3>
+        <p class="stack">PostgreSQL · Python ETL</p>
+        <p>Data modelling and data quality practice: a normalized schema for titles, people, and categories, with a robust CSV importer that handles messy real-world records.</p>
+        <p class="links"><a href="https://github.com/kazimtuluk/netflix" target="_blank" rel="noreferrer">Repository ↗</a></p>
+      </article>
+
+      <article class="card">
+        <h3>Electricity Consumption Study</h3>
+        <p class="stack">R · EDA · Visualization</p>
+        <p>Exploratory analysis of household electricity consumption, surfacing seasonal patterns and efficiency opportunities.</p>
+        <p class="links"><a href="https://github.com/kazimtuluk/Portfolio" target="_blank" rel="noreferrer">Repository ↗</a></p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills" class="section">
+    <div class="section-head">
+      <span class="eyebrow"><span class="tick">■</span> What I work with</span>
+      <h2>Skills</h2>
+    </div>
+    <div class="skill-row">
+      <div class="label">Business analysis</div>
+      <div class="muted">Requirements gathering &amp; translation · process mapping &amp; improvement · root cause analysis · test scenario design · end-user documentation &amp; training · backlog prioritization</div>
+    </div>
+    <div class="skill-row">
+      <div class="label">Data &amp; reporting</div>
+      <div class="muted">SQL (PostgreSQL, MySQL) · Python (pandas, numpy) · R (tidyverse) · Excel · Power BI · Tableau · regression, ANOVA</div>
+    </div>
+    <div class="skill-row">
+      <div class="label">Systems &amp; integration</div>
+      <div class="muted">System configuration · third-party integrations (REST APIs) · user access administration · data input process design · CI/CD (GitHub) · AI/LLM application design</div>
+    </div>
+    <div class="skill-row">
+      <div class="label">Background</div>
+      <div class="muted">Graduate Certificate in Business Analytics, St. Lawrence College · BSc &amp; MSc in Mathematics Education, Boğaziçi University · 14 years teaching mathematics and leading a math department</div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site" id="contact">
+  <p>Let's talk about your data, your processes, or both.</p>
+  <p><a href="mailto:kazim.tuluk@gmail.com">kazim.tuluk@gmail.com</a> · <a href="https://www.linkedin.com/in/kazim-tuluk-b4215170" target="_blank" rel="noreferrer">LinkedIn</a> · Kingston, Ontario</p>
+  <p>© <span id="y"></span> Kazim Tuluk</p>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
