@@ -70,11 +70,11 @@
   <section class="section">
     <h2>Findings at a glance</h2>
     <div class="finding-grid">
-      <div class="finding"><span class="sev high">High</span><p>Three curriculum objectives have <b>zero questions</b>. All three are figure-heavy: transformations and pyramids.</p></div>
+      <div class="finding"><span class="sev high">High</span><p>Three curriculum objectives have <b>zero questions</b>, and the gap is user-visible: selecting one shows an empty-state message. All three are figure-heavy.</p></div>
       <div class="finding"><span class="sev high">High</span><p><b>AI generation can't fill the gaps:</b> it needs a seed question to react to. 0 of 107 generated items landed in the empty objectives.</p></div>
       <div class="finding"><span class="sev high">High</span><p>One topic is <b>+97 items over</b> its exam weight; four others run far under. Root cause: authoring followed the calendar.</p></div>
       <div class="finding"><span class="sev high">High</span><p><b>Easy-tier scarcity</b> in four topics undermines the product's reinforcement loop for struggling students.</p></div>
-      <div class="finding"><span class="sev med">Medium</span><p>One question pointed to a <b>non-existent difficulty level</b>. Root cause: no foreign-key constraint. Fixed, then prevented.</p></div>
+      <div class="finding"><span class="sev med">Medium</span><p>One question pointed to a <b>non-existent difficulty level</b>. Root cause: no foreign-key constraint. Fixed after review; constraints recommended to prevent recurrence.</p></div>
       <div class="finding"><span class="sev low">Clean</span><p>Referential integrity otherwise spotless: <b>zero orphans, zero duplicates</b> across 1,247 items.</p></div>
     </div>
   </section>
