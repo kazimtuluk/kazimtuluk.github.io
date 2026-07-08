@@ -289,3 +289,44 @@ figure.shot figcaption{
   .feature:nth-of-type(even) .feature-text{order:1}
   .feature:nth-of-type(even) .frame{order:2}
 }
+
+/* ---------- analytics case page ---------- */
+.stat-band{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 6px;
+}
+.stat{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:18px 20px;text-align:center;
+}
+.stat b{
+  display:block;font-family:"STIX Two Text",Georgia,serif;font-weight:700;
+  font-size:34px;color:var(--pen);line-height:1.1;
+}
+.stat span{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:760px){.stat-band{grid-template-columns:repeat(2,1fr)}}
+
+.finding-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:760px){.finding-grid{grid-template-columns:1fr}}
+.finding{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+}
+.finding p{margin:8px 0 0;font-size:15px;max-width:none}
+.sev{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 10px;border-radius:999px;font-weight:600;
+}
+.sev.high{background:var(--pen-soft);color:var(--pen)}
+.sev.med{background:rgba(176,121,10,.14);color:#B0790A}
+.sev.low{background:rgba(46,125,80,.12);color:#2E7D50}
+
+pre.sql{
+  background:var(--card);border:1px solid var(--line);border-left:3px solid var(--pen);
+  border-radius:0 10px 10px 0;padding:16px 20px;overflow-x:auto;
+}
+pre.sql code{font-family:"IBM Plex Mono",monospace;font-size:13.5px;color:var(--ink);line-height:1.6}
+
+.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.outcome-grid{grid-template-columns:1fr}}
+.outcome{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.outcome b{font-family:"STIX Two Text",Georgia,serif;font-size:17px}
+.outcome p{margin:6px 0 0;font-size:14.5px;color:var(--muted);max-width:none}

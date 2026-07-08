@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProMathAI Analytics · Case Study · Kazim Tuluk</title>
+  <meta name="description" content="Case study: a SQL audit of ProMathAI's production question bank. 1,247 items, 7 findings, one authoring roadmap." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="top">
+    <a class="brand" href="index.html">KAZIM TULUK</a>
+    <nav class="primary" aria-label="Primary">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="cs-hero">
+  <div class="wrap">
+    <a class="back" href="index.html#work">← All work</a>
+    <span class="eyebrow" style="margin-top:18px"><span class="tick">■</span> Case study · Data analysis</span>
+    <h1>Auditing my own <span class="pen">production database</span></h1>
+    <dl class="cs-meta">
+      <div><dt>Role</dt><dd>Analyst (and product owner)</dd></div>
+      <div><dt>Stack</dt><dd>SQL · PostgreSQL (Neon) · Python</dd></div>
+      <div><dt>Scope</dt><dd>Full question bank, read-only</dd></div>
+      <div><dt>Deliverable</dt><dd><a href="assets/promathai-audit.pdf" target="_blank" rel="noreferrer">Full findings report (PDF) ↗</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="wrap cs-body">
+
+  <div class="stat-band">
+    <div class="stat"><b>1,247</b><span>questions audited</span></div>
+    <div class="stat"><b>33</b><span>tables in schema</span></div>
+    <div class="stat"><b>7</b><span>findings</span></div>
+    <div class="stat"><b>95</b><span>item authoring backlog</span></div>
+  </div>
+
+  <section class="section">
+    <h2>The question</h2>
+    <p>
+      Does the question bank of my live exam-prep platform actually cover what the national exam tests?
+      One SQL session against the production database, cross-referenced with eight years of exam blueprints.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>What the data showed</h2>
+    <figure class="shot">
+      <img src="assets/audit-coverage.png" alt="Question bank coverage by topic and difficulty">
+      <figcaption>Coverage by topic and difficulty. Red markers: four topics where easy items are nearly absent, starving the reinforcement flow that struggling students depend on.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="assets/audit-blueprint.png" alt="Question bank share vs LGS exam blueprint share">
+      <figcaption>Bank share vs. exam blueprint (2018-2025, excluding the two reduced-curriculum years). Authoring followed the teaching calendar, not the exam: first-semester topics run heavy, second-semester topics run thin.</figcaption>
+    </figure>
+  </section>
+
+  <section class="section">
+    <h2>Findings at a glance</h2>
+    <div class="finding-grid">
+      <div class="finding"><span class="sev high">High</span><p>Three curriculum objectives have <b>zero questions</b>. All three are figure-heavy: transformations and pyramids.</p></div>
+      <div class="finding"><span class="sev high">High</span><p><b>AI generation can't fill the gaps:</b> it needs a seed question to react to. 0 of 107 generated items landed in the empty objectives.</p></div>
+      <div class="finding"><span class="sev high">High</span><p>One topic is <b>+97 items over</b> its exam weight; four others run far under. Root cause: authoring followed the calendar.</p></div>
+      <div class="finding"><span class="sev high">High</span><p><b>Easy-tier scarcity</b> in four topics undermines the product's reinforcement loop for struggling students.</p></div>
+      <div class="finding"><span class="sev med">Medium</span><p>One question pointed to a <b>non-existent difficulty level</b>. Root cause: no foreign-key constraint. Fixed, then prevented.</p></div>
+      <div class="finding"><span class="sev low">Clean</span><p>Referential integrity otherwise spotless: <b>zero orphans, zero duplicates</b> across 1,247 items.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>One of the queries</h2>
+    <pre class="sql"><code>-- Curriculum objectives with no questions (coverage gaps)
+SELECT s.subtopic_name, a.acquisition_code, a.acquisition_text
+FROM acquisitions a
+JOIN subtopics s ON s.subtopic_id = a.subtopic_id
+LEFT JOIN questions q ON q.acquisition_id = a.acquisition_id
+WHERE q.question_id IS NULL
+ORDER BY s.subtopic_name, a.acquisition_code;</code></pre>
+    <p class="muted" style="font-size:14.5px">Three rows came back. Each one is a lesson a student cannot practise today.</p>
+  </section>
+
+  <section class="section">
+    <h2>What changed because of it</h2>
+    <div class="outcome-grid">
+      <div class="outcome"><b>Authoring roadmap</b><p>A blueprint-weighted, 95-item backlog targeting the under-covered objectives first.</p></div>
+      <div class="outcome"><b>Schema hardening</b><p>Foreign-key constraints so invalid references can never enter the bank again.</p></div>
+      <div class="outcome"><b>Process fix</b><p>A coverage check added to the content workflow, so gaps surface before students find them.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="links" style="font-family:'IBM Plex Mono',monospace">
+      <a href="index.html#work">← All work</a>
+      <a style="margin-left:18px" href="promathai.html">ProMathAI product case study →</a>
+      <a style="margin-left:18px" href="assets/promathai-audit.pdf" target="_blank" rel="noreferrer">Full report (PDF) ↗</a>
+    </p>
+  </section>
+
+</div>
+
+<footer class="site">
+  <p><a href="mailto:kazim.tuluk@gmail.com">kazim.tuluk@gmail.com</a> · <a href="https://www.linkedin.com/in/kazim-tuluk-b4215170" target="_blank" rel="noreferrer">LinkedIn</a> · Kingston, Ontario</p>
+  <p>© <span id="y"></span> Kazim Tuluk</p>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
